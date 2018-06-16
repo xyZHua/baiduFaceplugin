@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-face" version="0.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Baiduface</name>
+    <js-module name="Baiduface" src="www/Baiduface.js">
+        <clobbers target="cordova.plugins.Baiduface" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Baiduface">
+                <param name="android-package" value="cordova.plugin.face.Baiduface" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/Baiduface.java" target-dir="src/cordova/plugin/face" />
+    </platform>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Baiduface">
+                <param name="ios-package" value="Baiduface" onload="true" />
+            </feature>
+        </config-file>
+        
+        
+        <header-file src="src/ios/Baiduface.h" />
+        <source-file src="src/ios/Baiduface.m" />
+        
+        <header-file src="src/ios/DetectionViewController.h" />
+        <source-file src="src/ios/DetectionViewController.m" />
+        
+        <header-file src="src/ios/FaceBaseViewController.h" />
+        <source-file src="src/ios/FaceBaseViewController.m" />
+        
+        <header-file src="src/ios/FaceParameterConfig.h" />
+    
+        <header-file src="src/ios/CircleView.h" />
+        <source-file src="src/ios/CircleView.m" />
+        
+        <header-file src="src/ios/ImageUtils.h" />
+        <source-file src="src/ios/ImageUtils.m" />
+        
+        <header-file src="src/ios/RemindView.h" />
+        <source-file src="src/ios/RemindView.m" />
+        
+        <header-file src="src/ios/VideoCaptureDevice.h" />
+        <source-file src="src/ios/VideoCaptureDevice.m" />
+        
+        
+
+    </platform>
+</plugin>
